@@ -1,0 +1,264 @@
+body{
+	background: linear-gradient(to top,  black, grey, grey);
+	margin-bottom: 200px;
+}
+
+/*PORTFOLIO CAT*/
+.portfolio_cat li{
+	text-decoration: none;
+	list-style: none;
+	margin: 0;	
+	padding: 0;	
+	border: 1px solid #000;	
+	position: relative;
+	overflow: hidden;
+}
+ul{
+display: 	inline-flex;
+}
+.portfolio_cat{
+	display: flex;
+}
+.portfolio_cat img{
+	width: 100%;
+}
+.one{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	color: 	tomato;
+	padding-top: 30%;
+	opacity: 0;
+	top: 	0;		
+	right: 0;
+	background-color: rgba(0,0,0,.5);
+	top: 100%;
+	transition: all 0.5s;
+}
+.portfolio_cat li:hover .one{
+	opacity: 1;
+	top: 0;
+	/*transform: scale();*/
+}
+button{
+	margin-top: 10px;
+}
+/*PORTFOLIO CAT AND*/
+
+
+/*ВЫПАДАЮЩЕЕ МЕНЮ */
+.menu a{
+	text-decoration: none;
+	color: white;
+}
+.menu{
+	display: flex;
+	flex-direction: column;
+}
+.menu li{
+	text-decoration: none;
+	list-style: none;
+}
+.menu__item{
+	margin-bottom: 0;
+	position: relative;
+}
+.menu ul{
+	margin: 0;
+	padding: 0;
+}
+.said_bar{
+	width: 250px;
+	margin: 50px;
+}
+ .menu a{
+ 	width: 100%;
+ 	padding: 10px;
+ 	margin: 0;
+	background-color: rgba(0,0,0, .5);
+	display: block;
+	padding: 10px;
+	border-bottom: 2px solid #000;
+	transition: all 0.40s;
+}
+.menu a:hover{
+	background: yellow;
+	color: #000;
+	padding: 2px 2px 2px 20px;
+	transition: padding 0.65s;
+}
+
+.drop__menu {
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: tomato;
+	margin: 5px;
+	position: absolute;
+	top: -9999em ;
+	opacity: 0;
+	border-left: 4px solid transparent;
+}
+.menu__item:hover .drop__menu{
+	opacity: 1;
+	top:0;
+	left: 210px;
+	transition: opacity 0.60s;
+}
+/*ВЫПАДАЮЩЕЕ МЕНЮ end*/
+
+/*Двух сторонний блок*/
+.flip-container{
+	perspective: 1000px;
+	width: 300px;
+	height: 500px;
+	margin-bottom: 70px;
+	cursor: pointer;
+}
+.front, .back{
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 8px;
+}
+.front{
+	background-color: tomato;
+	width: 300px;
+	height: 500px;
+	color: rgba(0,0,0, 0.8);
+	text-shadow: 1px 1px 3px #fff;
+	transform: rotate3d(1,100,1, 0deg);
+	transition: 0.7s;
+	z-index: 2;
+}
+.back{
+	width: 300px;
+	height: 500px;
+	background-color: rgba(0,0,0, 0.9);
+	color: white;
+	transform: rotateY(180deg);
+}
+.flip-container:hover .flip{
+	transform: rotateY(180deg);
+}
+.flip{
+	transition: 0.8s;
+	transform-style: preserve-3d;
+}
+.flip-container img{
+	width: 100%;
+	margin-top: 10px;
+}
+
+/*3D transform*/
+.container-cube{
+	background: rgba(1,1,1, 0.8);
+	height: 1000px;
+	width: 700px;
+	position: absolute;
+}
+.new{
+	width: 300px;
+	height: 300px;
+	perspective: 500px;
+	position: relative;
+	margin: 400px auto;
+}
+.cube{
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	/*transform: rotateY(125deg) rotateZ(45deg);*/
+	animation-name: cube;
+	animation-duration: 40s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	margin-bottom: 200px;
+}
+.sketch{
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	text-align: center;
+	line-height: 300px;
+	font-weight: bolder;
+	letter-spacing: 2px;
+	font-size: 30px;
+}
+.fronts {
+	transform: translateZ(150px);
+	color: red;
+	background: rgba(220, 20, 60, 0.5);
+}
+
+.backk {
+	transform: rotateY(180deg) translateZ(150px);
+	color: green;
+	background: rgba(173, 255, 47, 0.5);
+}
+.backk:hover,
+.backk a:hover{
+	color: black;
+	text-decoration: none;
+	/*transform: translateX(20px);*/
+		/*background: rgba(220, 20, 60, 0.5);*/
+		opacity: 0.0;
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(150px);
+	color: blue;
+	background: rgba(32, 178, 170, 0.5);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(150px);
+	color: purple;
+	background: rgba(255, 0, 255, 0.5);
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(150px);
+	color: yellow;
+	background: rgba(255, 215, 0, 0.5);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(150px);
+	color: tomato;
+	background: rgba(165, 42, 42, 0.5);
+}
+
+@keyframes cube{
+	from{
+		transform: rotateX(200deg)
+	}
+	to{
+		transform: rotateY(180deg);
+	}
+}
+/*3D transform*/
+
+/*Двух сторонний блок END*/
+
+
+
+
+
+.kirpich{
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(yellow, black);
+	filter: brightness(90%);
+	border: 5px solid #fff;
+	border-radius: 50%;
+	margin: 100px auto;
+	text-align: center;
+	filter: 	drop-shadow( 50px 40px 15px black);
+}
+.kirpich h1{
+
+}
